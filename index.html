@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoice App</title>
+  </head>
+  <body>
+    <main id="app" class="flex flex-col h-screen">
+      <header class="">
+        <div class="container mx-auto">
+          <div class="py-4">
+            <h1 class="font-mont font-bold text-3xl">MMS Solution</h1>
+            <p class="text-blue-400">Invoice App for shop</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="mt-4">
+        <div class="container mx-auto mb-5">
+          <form class="">
+            <div
+              class="grid grid-cols-4 gap-3 border border-stone-100 shadow p-5 rounded-lg"
+            >
+              <div class="col-span-2">
+                <label
+                  for="countries"
+                  class="block mb-2.5 text-sm font-medium text-heading"
+                  >Select a Product</label
+                >
+                <select
+                  id="countries"
+                  class="block w-full px-3 py-2.5 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand shadow-xs placeholder:text-body"
+                >
+                  <option selected>Choose a product</option>
+                  <option value="US">Apple</option>
+                  <option value="CA">Mango</option>
+                  <option value="FR">Orange</option>
+                  <option value="DE">Lime</option>
+                </select>
+              </div>
+              <div class="col-span-1">
+                <div>
+                  <label
+                    for="quantity"
+                    class="block mb-2.5 text-sm font-medium text-heading"
+                    >Your Quantity</label
+                  >
+                  <input
+                    type="number"
+                    id="quantity"
+                    class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+                    placeholder="0"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="col-span-1">
+                <button
+                  type="button"
+                  class="w-full h-full text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
+                >
+                  Add Record
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="container mx-auto">
+          <div
+            class="relative overflow-x-auto bg-neutral-primary-soft shadow-xs rounded-base border border-default"
+          >
+            <table class="w-full text-sm text-left rtl:text-right text-body">
+              <thead class="bg-neutral-secondary-soft border-b border-default">
+                <tr>
+                  <th scope="col" class="px-6 py-3 font-medium">
+                    Product name
+                  </th>
+                  <th scope="col" class="px-6 py-3 font-medium text-end">
+                    Price
+                  </th>
+                  <th scope="col" class="px-6 py-3 font-medium text-end">
+                    Quantity
+                  </th>
+                  <th scope="col" class="px-6 py-3 font-medium text-end">
+                    Cost
+                  </th>
+                  <th scope="col" class="px-6 py-3 font-medium text-end">
+                    Action
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  class="odd:bg-neutral-primary even:bg-neutral-secondary-soft border-b border-default"
+                >
+                  <th
+                    scope="row"
+                    colspan="5"
+                    class="px-6 py-4 font-medium text-heading whitespace-nowrap text-center"
+                  >
+                    There is no record yet
+                  </th>
+                </tr>
+                <tr
+                  class="odd:bg-neutral-primary even:bg-neutral-secondary-soft border-b border-default"
+                >
+                  <th
+                    scope="row"
+                    class="px-6 py-4 font-medium text-heading whitespace-nowrap"
+                  >
+                    Apple
+                  </th>
+                  <td class="px-6 py-4 text-end">500</td>
+                  <td class="px-6 py-4 text-end">3</td>
+                  <td class="px-6 py-4 text-end">1500</td>
+                  <td class="px-6 py-4 text-end">
+                    <a
+                      href="#"
+                      class="font-medium text-fg-brand hover:underline"
+                      >Remove</a
+                    >
+                  </td>
+                </tr>
+                <tr
+                  class="odd:bg-neutral-primary even:bg-neutral-secondary-soft border-b border-default"
+                >
+                  <th
+                    scope="row"
+                    class="px-6 py-4 font-medium text-heading whitespace-nowrap"
+                  >
+                    Apple
+                  </th>
+                  <td class="px-6 py-4 text-end">500</td>
+                  <td class="px-6 py-4 text-end">3</td>
+                  <td class="px-6 py-4 text-end">1500</td>
+                  <td class="px-6 py-4 text-end">
+                    <a
+                      href="#"
+                      class="font-medium text-fg-brand hover:underline"
+                      >Remove</a
+                    >
+                  </td>
+                </tr>
+                <tr
+                  class="odd:bg-neutral-primary even:bg-neutral-secondary-soft border-b border-default"
+                >
+                  <th
+                    scope="row"
+                    class="px-6 py-4 font-medium text-heading whitespace-nowrap"
+                  >
+                    Apple
+                  </th>
+                  <td class="px-6 py-4 text-end">500</td>
+                  <td class="px-6 py-4 text-end">3</td>
+                  <td class="px-6 py-4 text-end">1500</td>
+                  <td class="px-6 py-4 text-end">
+                    <a
+                      href="#"
+                      class="font-medium text-fg-brand hover:underline"
+                      >Remove</a
+                    >
+                  </td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr class="border-b border-default">
+                  <th
+                    scope="row"
+                    colspan="3"
+                    class="px-6 py-4 font-medium text-heading whitespace-nowrap text-end"
+                  >
+                    Total
+                  </th>
+                  <td class="px-6 py-4 text-end">5500</td>
+                  <td class="px-6 py-4 text-end"></td>
+                </tr>
+                <tr class="border-b border-default">
+                  <th
+                    scope="row"
+                    colspan="3"
+                    class="px-6 py-4 font-medium text-heading whitespace-nowrap text-end"
+                  >
+                    Tax
+                  </th>
+                  <td class="px-6 py-4 text-end">500</td>
+                  <td class="px-6 py-4 text-end"></td>
+                </tr>
+                <tr class="border-b border-default">
+                  <th
+                    scope="row"
+                    colspan="3"
+                    class="px-6 py-4 font-medium text-heading whitespace-nowrap text-end"
+                  >
+                    Net Total
+                  </th>
+                  <td class="px-6 py-4 text-end">6000</td>
+                  <td class="px-6 py-4 text-end"></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="fixed right-0 w-100 h-screen bg-white shadow translate-x-full duration-300"
+      >
+        <div class="p-4">
+          <div class="mb-3">
+            <h1 class="font-mont font-bold text-3xl">Manage Inverntory</h1>
+            <p class="text-blue-400">Availabe Items</p>
+          </div>
+
+          <div class="flex flex-col gap-3">
+            <div class="border rounded-lg p-3 flex justify-between">
+              <h3>Apple</h3>
+              <p>500 mmk</p>
+            </div>
+            <div class="border rounded-lg p-3 flex justify-between">
+              <h3>Apple</h3>
+              <p>500 mmk</p>
+            </div>
+            <div class="border rounded-lg p-3 flex justify-between">
+              <h3>Apple</h3>
+              <p>500 mmk</p>
+            </div>
+          </div>
+
+          <div class="p-3 bg-blue-50 rounded-lg mt-5">
+            <div class="grid grid-cols-3 gap-3 grid-rows-2">
+              <div class="col-span-3">
+                <div>
+                  <label
+                    for="quantity"
+                    class="block mb-2.5 text-sm font-medium text-heading"
+                    >New Product Name</label
+                  >
+                  <input
+                    type="type"
+                    id="quantity"
+                    class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+                    placeholder=""
+                    required
+                  />
+                </div>
+              </div>
+              <div class="col-span-2">
+                <div>
+                  <label
+                    for="quantity"
+                    class="block mb-2.5 text-sm font-medium text-heading"
+                    >New Product Price</label
+                  >
+                  <input
+                    type="number"
+                    id="quantity"
+                    class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+                    placeholder="0"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="col-span-1">
+                <button
+                  type="button"
+                  class="w-full h-full text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
+                >
+                  Add
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="mt-auto">
+        <div class="container py-3 mx-auto">
+          <div class="flex justify-end gap-2">
+            <button
+              type="button"
+              class="text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
+            >
+              Manage Inverntory
+            </button>
+
+            <button
+              type="button"
+              class="text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
+            >
+              Print
+            </button>
+          </div>
+        </div>
+      </footer>
+    </main>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

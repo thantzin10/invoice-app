@@ -1,0 +1,20 @@
+@import url('./node_modules/sweetalert2/dist/sweetalert2.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Padauk:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  /* fontFamily : {
+    san : ["Montserrat",'Padauk', 'sans-serif';]
+
+  } */
+  --font-mont: "Montserrat",'Padauk', sans-serif; 
+}
+
+@import "flowbite/src/themes/default";
+
+@plugin "flowbite/plugin";
+
+@source "../node_modules/flowbite";
+
