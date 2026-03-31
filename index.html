@@ -8,6 +8,8 @@
   </head>
   <body>
     <main id="app" class="flex flex-col h-screen">
+      <!-- Header  -->
+
       <header class="">
         <div class="container mx-auto">
           <div class="py-4">
@@ -17,27 +19,28 @@
         </div>
       </header>
 
+      <!-- Section Input -->
+
       <section class="mt-4">
         <div class="container mx-auto mb-5">
-          <form class="">
+          <!-- Form Section -->
+          <form id="createRecordForm" class="">
             <div
               class="grid grid-cols-4 gap-3 border border-stone-100 shadow p-5 rounded-lg"
             >
               <div class="col-span-2">
                 <label
-                  for="countries"
+                  for="productSelect"
                   class="block mb-2.5 text-sm font-medium text-heading"
                   >Select a Product</label
                 >
                 <select
-                  id="countries"
+                  required
+                  id="productSelect"
+                  name="product_select"
                   class="block w-full px-3 py-2.5 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand shadow-xs placeholder:text-body"
                 >
-                  <option selected>Choose a product</option>
-                  <option value="US">Apple</option>
-                  <option value="CA">Mango</option>
-                  <option value="FR">Orange</option>
-                  <option value="DE">Lime</option>
+                  <option value="" selected>Choose a product</option>
                 </select>
               </div>
               <div class="col-span-1">
@@ -48,8 +51,10 @@
                     >Your Quantity</label
                   >
                   <input
+                    required
                     type="number"
                     id="quantity"
+                    name="quantity"
                     class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
                     placeholder="0"
                     required
@@ -58,7 +63,7 @@
               </div>
               <div class="col-span-1">
                 <button
-                  type="button"
+                  type="submit"
                   class="w-full h-full text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
                 >
                   Add Record
@@ -67,6 +72,8 @@
             </div>
           </form>
         </div>
+
+        <!-- Table Section -->
         <div class="container mx-auto">
           <div
             class="relative overflow-x-auto bg-neutral-primary-soft shadow-xs rounded-base border border-default"
@@ -204,81 +211,101 @@
         </div>
       </section>
 
+      <!-- Section SideBar -->
+
       <section
-        class="fixed right-0 w-100 h-screen bg-white shadow translate-x-full duration-300"
+        id="productSideBar"
+        class="fixed right-0 w-100 h-screen bg-white shadow translate-x-full"
       >
         <div class="p-4">
-          <div class="mb-3">
-            <h1 class="font-mont font-bold text-3xl">Manage Inverntory</h1>
-            <p class="text-blue-400">Availabe Items</p>
+          <!-- sidebar title -->
+          <div class="flex justify-between items-center mb-3">
+            <div class="">
+              <h1 class="font-mont font-bold text-3xl">Manage Inverntory</h1>
+              <p class="text-blue-400">Availabe Items</p>
+            </div>
+            <button id="closeSideBarBtn" class="">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6 pointer-events-none"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18 18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
           </div>
 
-          <div class="flex flex-col gap-3">
-            <div class="border rounded-lg p-3 flex justify-between">
-              <h3>Apple</h3>
-              <p>500 mmk</p>
-            </div>
-            <div class="border rounded-lg p-3 flex justify-between">
-              <h3>Apple</h3>
-              <p>500 mmk</p>
-            </div>
-            <div class="border rounded-lg p-3 flex justify-between">
-              <h3>Apple</h3>
-              <p>500 mmk</p>
-            </div>
-          </div>
+          <!-- sidebar data -->
 
+          <div id="productGroup" class="flex flex-col gap-3"></div>
+
+          <!-- sidebar input -->
           <div class="p-3 bg-blue-50 rounded-lg mt-5">
-            <div class="grid grid-cols-3 gap-3 grid-rows-2">
-              <div class="col-span-3">
-                <div>
-                  <label
-                    for="quantity"
-                    class="block mb-2.5 text-sm font-medium text-heading"
-                    >New Product Name</label
+            <form action="" id="productCreateForm">
+              <div class="grid grid-cols-3 gap-3 grid-rows-2">
+                <div class="col-span-3">
+                  <div>
+                    <label
+                      for="newProductName"
+                      class="block mb-2.5 text-sm font-medium text-heading"
+                      >New Product Name</label
+                    >
+                    <input
+                      type="type"
+                      id="newProductName"
+                      name="new_product_name"
+                      class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+                      placeholder=""
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="col-span-2">
+                  <div>
+                    <label
+                      for="newProductPrice"
+                      class="block mb-2.5 text-sm font-medium text-heading"
+                      >New Product Price</label
+                    >
+                    <input
+                      type="number"
+                      id="newProductPrice"
+                      name="new_product_price"
+                      class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+                      placeholder="0"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="col-span-1">
+                  <button
+                    type="button"
+                    id="addNewProductBtn"
+                    class="w-full h-full text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
                   >
-                  <input
-                    type="type"
-                    id="quantity"
-                    class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
-                    placeholder=""
-                    required
-                  />
+                    Add
+                  </button>
                 </div>
               </div>
-              <div class="col-span-2">
-                <div>
-                  <label
-                    for="quantity"
-                    class="block mb-2.5 text-sm font-medium text-heading"
-                    >New Product Price</label
-                  >
-                  <input
-                    type="number"
-                    id="quantity"
-                    class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
-                    placeholder="0"
-                    required
-                  />
-                </div>
-              </div>
-              <div class="col-span-1">
-                <button
-                  type="button"
-                  class="w-full h-full text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
-                >
-                  Add
-                </button>
-              </div>
-            </div>
+            </form>
           </div>
         </div>
       </section>
+
+      <!-- Footer  -->
 
       <footer class="mt-auto">
         <div class="container py-3 mx-auto">
           <div class="flex justify-end gap-2">
             <button
+              id="manageInverntoryBtn"
               type="button"
               class="text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
             >
@@ -294,6 +321,13 @@
           </div>
         </div>
       </footer>
+
+      <template id="productCardTemplate">
+        <div class="product-card border rounded-lg p-3 flex justify-between">
+          <h3 class="product-name">Apple</h3>
+          <p><span class="product-price"></span> mmk</p>
+        </div>
+      </template>
     </main>
     <script type="module" src="/main.js"></script>
   </body>
