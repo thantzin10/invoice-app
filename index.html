@@ -98,9 +98,9 @@
                   </th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody id="recordGroup">
                 <tr
-                  class="odd:bg-neutral-primary even:bg-neutral-secondary-soft border-b border-default"
+                  class="last:table-row hidden odd:bg-neutral-primary even:bg-neutral-secondary-soft border-b border-default"
                 >
                   <th
                     scope="row"
@@ -109,66 +109,6 @@
                   >
                     There is no record yet
                   </th>
-                </tr>
-                <tr
-                  class="odd:bg-neutral-primary even:bg-neutral-secondary-soft border-b border-default"
-                >
-                  <th
-                    scope="row"
-                    class="px-6 py-4 font-medium text-heading whitespace-nowrap"
-                  >
-                    Apple
-                  </th>
-                  <td class="px-6 py-4 text-end">500</td>
-                  <td class="px-6 py-4 text-end">3</td>
-                  <td class="px-6 py-4 text-end">1500</td>
-                  <td class="px-6 py-4 text-end">
-                    <a
-                      href="#"
-                      class="font-medium text-fg-brand hover:underline"
-                      >Remove</a
-                    >
-                  </td>
-                </tr>
-                <tr
-                  class="odd:bg-neutral-primary even:bg-neutral-secondary-soft border-b border-default"
-                >
-                  <th
-                    scope="row"
-                    class="px-6 py-4 font-medium text-heading whitespace-nowrap"
-                  >
-                    Apple
-                  </th>
-                  <td class="px-6 py-4 text-end">500</td>
-                  <td class="px-6 py-4 text-end">3</td>
-                  <td class="px-6 py-4 text-end">1500</td>
-                  <td class="px-6 py-4 text-end">
-                    <a
-                      href="#"
-                      class="font-medium text-fg-brand hover:underline"
-                      >Remove</a
-                    >
-                  </td>
-                </tr>
-                <tr
-                  class="odd:bg-neutral-primary even:bg-neutral-secondary-soft border-b border-default"
-                >
-                  <th
-                    scope="row"
-                    class="px-6 py-4 font-medium text-heading whitespace-nowrap"
-                  >
-                    Apple
-                  </th>
-                  <td class="px-6 py-4 text-end">500</td>
-                  <td class="px-6 py-4 text-end">3</td>
-                  <td class="px-6 py-4 text-end">1500</td>
-                  <td class="px-6 py-4 text-end">
-                    <a
-                      href="#"
-                      class="font-medium text-fg-brand hover:underline"
-                      >Remove</a
-                    >
-                  </td>
                 </tr>
               </tbody>
               <tfoot>
@@ -180,7 +120,9 @@
                   >
                     Total
                   </th>
-                  <td class="px-6 py-4 text-end">5500</td>
+                  <td id="recordTotal" class="record-total px-6 py-4 text-end">
+                    0
+                  </td>
                   <td class="px-6 py-4 text-end"></td>
                 </tr>
                 <tr class="border-b border-default">
@@ -191,7 +133,9 @@
                   >
                     Tax
                   </th>
-                  <td class="px-6 py-4 text-end">500</td>
+                  <td id="recordTax" class="record-tax px-6 py-4 text-end">
+                    0
+                  </td>
                   <td class="px-6 py-4 text-end"></td>
                 </tr>
                 <tr class="border-b border-default">
@@ -202,7 +146,12 @@
                   >
                     Net Total
                   </th>
-                  <td class="px-6 py-4 text-end">6000</td>
+                  <td
+                    id="recordNetTotal"
+                    class="record-netTotal px-6 py-4 text-end"
+                  >
+                    0
+                  </td>
                   <td class="px-6 py-4 text-end"></td>
                 </tr>
               </tfoot>
@@ -327,6 +276,27 @@
           <h3 class="product-name">Apple</h3>
           <p><span class="product-price"></span> mmk</p>
         </div>
+      </template>
+
+      <template id="recordRowTemplate">
+        <tr
+          class="record-row odd:bg-neutral-primary even:bg-neutral-secondary-soft border-b border-default"
+        >
+          <th
+            scope="row"
+            class="record-product-name px-6 py-4 font-medium text-heading whitespace-nowrap"
+          >
+            Apple
+          </th>
+          <td class="record-product-price px-6 py-4 text-end">500</td>
+          <td class="record-quantity px-6 py-4 text-end">3</td>
+          <td class="record-cost px-6 py-4 text-end">1500</td>
+          <td class="px-6 py-4 text-end">
+            <button class="record-remove font-medium text-fg-brand hover:underline">
+              Remove
+            </button>
+          </td>
+        </tr>
       </template>
     </main>
     <script type="module" src="/main.js"></script>
