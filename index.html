@@ -22,7 +22,7 @@
       <!-- Section Input -->
 
       <section class="mt-4">
-        <div class="container mx-auto mb-5">
+        <div class="container mx-auto mb-5 print:hidden">
           <!-- Form Section -->
           <form id="createRecordForm" class="">
             <div
@@ -93,7 +93,10 @@
                   <th scope="col" class="px-6 py-3 font-medium text-end">
                     Cost
                   </th>
-                  <th scope="col" class="px-6 py-3 font-medium text-end">
+                  <th
+                    scope="col"
+                    class="px-6 py-3 font-medium text-end print:hidden"
+                  >
                     Action
                   </th>
                 </tr>
@@ -123,7 +126,7 @@
                   <td id="recordTotal" class="record-total px-6 py-4 text-end">
                     0
                   </td>
-                  <td class="px-6 py-4 text-end"></td>
+                  <td class="px-6 py-4 text-end print:hidden"></td>
                 </tr>
                 <tr class="border-b border-default">
                   <th
@@ -136,7 +139,7 @@
                   <td id="recordTax" class="record-tax px-6 py-4 text-end">
                     0
                   </td>
-                  <td class="px-6 py-4 text-end"></td>
+                  <td class="px-6 py-4 text-end print:hidden"></td>
                 </tr>
                 <tr class="border-b border-default">
                   <th
@@ -152,12 +155,14 @@
                   >
                     0
                   </td>
-                  <td class="px-6 py-4 text-end"></td>
+                  <td class="px-6 py-4 text-end print:hidden"></td>
                 </tr>
               </tfoot>
             </table>
           </div>
         </div>
+
+        <p class="hidden print:block mt-5">Thank you from mms it</p>
       </section>
 
       <!-- Section SideBar -->
@@ -252,7 +257,7 @@
 
       <footer class="mt-auto">
         <div class="container py-3 mx-auto">
-          <div class="flex justify-end gap-2">
+          <div class="flex justify-end gap-2 print:hidden">
             <button
               id="manageInverntoryBtn"
               type="button"
@@ -263,9 +268,10 @@
 
             <button
               type="button"
+              id="checkout"
               class="text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
             >
-              Print
+              Checkout
             </button>
           </div>
         </div>
@@ -280,7 +286,7 @@
 
       <template id="recordRowTemplate">
         <tr
-          class="record-row odd:bg-neutral-primary even:bg-neutral-secondary-soft border-b border-default"
+          class="record-row group odd:bg-neutral-primary even:bg-neutral-secondary-soft border-b border-default"
         >
           <th
             scope="row"
@@ -289,10 +295,50 @@
             Apple
           </th>
           <td class="record-product-price px-6 py-4 text-end">500</td>
-          <td class="record-quantity px-6 py-4 text-end">3</td>
-          <td class="record-cost px-6 py-4 text-end">1500</td>
           <td class="px-6 py-4 text-end">
-            <button class="record-remove font-medium text-fg-brand hover:underline">
+            <button
+              class="quantity-sub border border-blue-500 text-blue-500 p-0.5 rounded-full active:scale-90 group-hover:inline-block hidden"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-3 pointer-events-none"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5 12h14"
+                />
+              </svg>
+            </button>
+            <span class="record-quantity w-5 inline-block">0</span>
+            <button
+              class="quantity-add border border-blue-500 text-blue-500 p-0.5 rounded-full active:scale-90 group-hover:inline-block hidden"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-3 pointer-events-none"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 4.5v15m7.5-7.5h-15"
+                />
+              </svg>
+            </button>
+          </td>
+          <td class="record-cost px-6 py-4 text-end">1500</td>
+          <td class="px-6 py-4 text-end print:hidden">
+            <button
+              class="record-remove font-medium text-fg-brand hover:underline"
+            >
               Remove
             </button>
           </td>
